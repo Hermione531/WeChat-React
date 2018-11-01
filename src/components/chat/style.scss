@@ -1,0 +1,64 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    width: 100%;
+    .title {
+        position: relative;
+        border-bottom: 1px solid #DEDEDE;
+        height: 75px;
+        width: 100%;
+
+        p {
+            position: absolute;
+            left: 28px;
+            bottom: 8px;
+            font-size: 1.2em;
+        }
+    }
+
+    .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 32px;
+        height: 27px;
+        background: url('../../asserts/img/close.svg') no-repeat center center;
+        background-size: 10px 10px;
+
+        &:hover{
+            background: url('../../asserts/img/close-hover.svg') no-repeat center center;
+            background-color: #f45454;
+            cursor: pointer;
+        }
+    }
+}
+
+.record {
+    height: 450px;
+    border-bottom: 1px solid #DEDEDE;
+}
+
+.chat {
+    height: 175px;
+    position: relative;
+    padding: 10px 20px;
+    text-align: center;
+
+    textarea {
+        margin: 10px auto;
+        width: 95%;
+        height: 70%;
+        outline: none;
+        border: 0;
+        background-color: transparent;
+        resize: none;
+    }
+
+    button {
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+    }
+}

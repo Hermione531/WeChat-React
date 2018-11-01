@@ -1,0 +1,15 @@
+.container {
+    padding: 10px;
+    text-align: center;
+    background: linear-gradient(to bottom, #2a2a2a, #191919);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .tools {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
