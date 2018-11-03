@@ -1,7 +1,8 @@
 import React from 'react';
 
 import Search from './search';
-import List from './list';
+// import List from './list';
+import List from '../../containers/contacts/list'
 
 import style from './style.scss';
 

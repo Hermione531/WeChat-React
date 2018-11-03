@@ -5,30 +5,35 @@ import style from './style'
 
 class List extends React.Component {
     constructor(props) {
-        super();
+        super(props);
 
         this.state = {
-            contacts: []
+            selected: null
         };
+        this.select = this.select.bind(this);
+    }
+
+    select(id) {
+        this.setState({
+            selected: id
+        });
+        this.props.changeDialog(id);
     }
 
     render() {
-        const { contacts } = this.state;
-        let ListContainer = null;
+        const { selected } = this.state;
+        const { dialogs } = this.props;
+        
 
-        if(contacts.length) {
-            ListContainer = contacts.map((contact, index) => {
-                <Item key={`p_${index}`} contact={contact} />;
-            });
-        } else {
-            //无联系人面板
-        }
+        if(!dialogs) {
+           //无联系人面板
+           
+        } 
 
-        return(
-            <div className={style['contacts']}>
-                {ListContainer}
+        return <div className={style['contacts']}>
+                {dialogs.map(dialog => <Item key={dialog.id} data={dialog} />)}
             </div>
-        );
+        
     }
 }
 

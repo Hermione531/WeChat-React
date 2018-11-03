@@ -1,26 +1,27 @@
 import React from 'react';
 import { cutOffText } from '../../utils';
-/*
-数据结构：id, img, name, time, content
 
- */
+import temp_url from '../../asserts/img/data/kate.jpg';
+
 class Item extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
 
     render() {
-        const { id, img, name, time, content } = this.props.contact;
+        const { id, img, name, message, time } = this.props.data;
 
         return (
-            <div className={style['contact-item']}>
-                <div>头像</div>
+            <div>
+                <div>
+                    <img src={temp_url}/>
+                </div>
                 <div>
                     <p>
                         <span>{ name }</span>
                         <span>{ time }</span>
                     </p>
-                    <span>{ cutOffText(content, 30) }</span>
+                    <span>{ message }</span>
                 </div>
             </div>
         );
