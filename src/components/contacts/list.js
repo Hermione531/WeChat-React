@@ -23,17 +23,17 @@ class List extends React.Component {
     render() {
         const { selected } = this.state;
         const { dialogs } = this.props;
-        
+
 
         if(!dialogs) {
            //无联系人面板
-           
-        } 
+
+        }
 
         return <div className={style['contacts']}>
-                {dialogs.map(dialog => <Item key={dialog.id} data={dialog} />)}
+                {dialogs.map(dialog => <Item key={dialog.id} data={dialog} actived={selected == dialog.id} handleClick={() => this.select(dialog.id)} />)}
             </div>
-        
+
     }
 }
 

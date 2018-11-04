@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
-import Chat from '../../components/chat/dialog';
+import { updateChatDialogs } from '../../actions';
 
-function mapStateToProps(state) {
+import Chat from '../../components/chat/chat';
 
-}
 
 function mapDispatchToProps(dispatch) {
-    
+    commit: (id, message, time) => {
+        dispatch(updateChatDialogs(id, message, time));
+    }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Chat);
+export default connect(null, mapDispatchToProps)(Chat);

@@ -37,7 +37,7 @@ const defaultValue = [
             ["0", "你好", "2018-1-5"]
         ]
     }
-    
+
 ];
 
 const dialogs = (state = defaultValue, action) => {
@@ -46,12 +46,12 @@ const dialogs = (state = defaultValue, action) => {
             return action.payload;
         case reducerType.UPDATE_DIALOGS:
             const result = [];
-            state.forEach(({id, img, name, data}) => {
+            state.forEach(({id, name, data}) => {
                 if(action.payload.id === id ) {
-                    data.push([1, action.payload.word, action.payload.time]);
-                    result.unshift({id, img, name, data});
+                    data.push(["1", action.payload.message, action.payload.time]);
+                    result.unshift({id, name, data});
                 } else {
-                    result.push({id, img, name, data});
+                    result.push({id, name, data});
                 }
                 return result;
             });
