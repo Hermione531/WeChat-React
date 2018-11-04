@@ -12,7 +12,7 @@ class Chat extends React.Component {
     }
 
     send() {
-        this.props.commit()
+
     }
 
     render()  {

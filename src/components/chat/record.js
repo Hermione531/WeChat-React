@@ -3,15 +3,12 @@ import React from 'react';
 import styles from './style.scss'
 
 class Record extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            name: ""
-        };
+    constructor(props) {
+        super(props);
     }
 
     render() {
-        const { name }= this.state;
+        const { data } = this.props;
         return(
             <div className={styles['record']}>
                 {name}

@@ -1,7 +1,8 @@
 import React from 'react';
 
 import Chat from './chat';
-import Record from './record';
+// import Record from './record';
+import Record from '../../containers/chat/record';
 
 import styles from './style.scss';
 
@@ -16,7 +17,7 @@ class ChatFun extends React.Component {
 
     render() {
         const { contactName } = this.state;
-        
+
         return (
             <div className={styles['container']} >
                 <div className={styles['title']}>

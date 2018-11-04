@@ -10,4 +10,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(null, mapDispatchToProps)(Chat);
+// export default connect(null, mapDispatchToProps)(Chat);

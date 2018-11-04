@@ -31,7 +31,7 @@ class List extends React.Component {
         }
 
         return <div className={style['contacts']}>
-                {dialogs.map(dialog => <Item key={dialog.id} data={dialog} actived={selected == dialog.id} handleClick={() => this.select(dialog.id)} />)}
+                {dialogs.map(dialog => <Item key={dialog.id} data={dialog} onClick={console.log(dialog.id)} />)}
             </div>
 
     }
