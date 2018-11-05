@@ -19,7 +19,7 @@ class Chat extends React.Component {
         const { chats } = this.state;
 
         return(
-            <div className={styles['chat']}>
+            <div className={styles['chat-container']}>
                 <textarea></textarea>
                 <button onClick={this.send}>发送(S)</button>
             </div>

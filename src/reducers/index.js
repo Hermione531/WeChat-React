@@ -5,7 +5,7 @@ import currentDialogId from './currentDialogId';
 
 const rootReducer = combineReducers({
     dialogs,
-    currentDialogId
+    currentDialogId,
 });
 
 export default rootReducer;

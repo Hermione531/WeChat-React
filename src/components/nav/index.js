@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './style.scss';
 
-import self_img from '../../asserts/img/data/me.jpg'
+import self_img from '../../asserts/img/data/me.jpg';
 
 class Nav extends React.Component{
 

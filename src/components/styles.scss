@@ -3,15 +3,11 @@
     margin: 0;
 }
 .container {
-    position: absolute;
-    top: 15%;
-    left: 25%;
     width: 800px;
     height: 700px;
-/*    border-radius: 10px;*/
-    border: 1px solid #B9B9B9; 
-    box-shadow: 0 0 2px 2px #DDDDDD;
-
+    margin: 100px auto;
+    /*border-radius: 5px;*/
+    box-shadow: 1px 0 1px #ccc, -1px 0 1px #ccc, 0 1px 1px #ccc, 0 -1px 1px #ccc;
 
     display: flex;
     flex-direction: row;

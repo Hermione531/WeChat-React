@@ -1,7 +1,8 @@
 import React from 'react';
 import { Input, Icon, Button } from 'antd';
 
-import style from './style.scss'
+import style from './style.scss';
+import search_img from "../../asserts/img/search.svg";
 
 class Search extends React.Component {
     constructor(props) {
@@ -10,19 +11,30 @@ class Search extends React.Component {
         this.state = {
             context: '',
         }
+
+        this.onKeyDown = this.onKeyDown.bind(this);
     }
 
-    onChange(e) {
-        this.setState({context: e.target.value});
+    onKeyDown(e) {
+        if(e.keyCode == "13") {
+            e.preventDefault();
+            this.props.searchContact(e.target.value);
+        }
+        
     }
 
     render() {
         const { context } = this.state;
         return(
-            <div className={style['search']}>
-                <input className={style['searchTxt']} type="text" name="search" placeholder="搜索" onChange={this.onChange}/>
+            <div className={style['search-container']}>
+                <div className={style['search-box']}>
+                    <img src="../../asserts/img/search.svg" />
+                    <input type="text" name="search" placeholder="搜索" onKeyDown={this.onKeyDown}/>
+                </div>
 
-                <input className={style['searchBtn']} type="button" placeholder="hh"/>
+                <div className={style['search-btn']}>
+                    <img src="../../asserts/img/plus.svg" />
+                </div>
             </div>
         );
     }

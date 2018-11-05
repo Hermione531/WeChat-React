@@ -1,18 +1,17 @@
 import { connect } from 'react-redux';
-import Record from '../../components/chat/record';
+import Record from '../../components/chat/index';
 
 function mapStateToProps(state) {
     const currentDialogId = state.get('currentDialogId');
-    let result = [];
-    return state.get('dialogs').map(({id, name, data}) => {
+    let result;
+    let contactName;
+    state.get('dialogs').forEach(({id, name, data}) => {
         if(id === currentDialogId) {
-            // return data;
+            contactName = name;
+            result = data;
         }
     })
+    return {name: contactName, records: result};
 }
 
-function mapDispatchToProps(dispatch) {
-
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Record);
+export default connect(mapStateToProps, null)(Record);
