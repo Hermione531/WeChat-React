@@ -1,13 +1,28 @@
 import { connect } from 'react-redux';
 import { updateChatDialogs } from '../../actions';
+import { sendMessage } from '../../actions';
 
-import Chat from '../../components/chat/chat';
+import ChatFun from '../../components/chat/index';
 
-
-function mapDispatchToProps(dispatch) {
-    commit: (id, message, time) => {
-        dispatch(updateChatDialogs(id, message, time));
-    }
+const mapStateToProps = state => {
+    const currentDialogId = state.get('currentDialogId');
+    let result;
+    let contactName;
+    let contactId;
+    state.get('dialogs').forEach(({id, name, data}) => {
+        if(id === currentDialogId) {
+            contactId = id;
+            contactName = name;
+            result = data;
+        }
+    })
+    return {id: contactId, name: contactName, records: result};
 }
 
-// export default connect(null, mapDispatchToProps)(Chat);
+const mapDispatchToProps = dispatch => ({
+    send: (id, message, time) => {
+        dispatch(sendMessage({id, message, time}));
+    }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChatFun);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { cutOffText } from '../../utils';
+import { cutOffText } from '../../utils/tool';
 
 import temp_url from '../../asserts/img/data/kate.jpg';
 
@@ -23,7 +23,7 @@ class Item extends React.Component {
                         <span className={styles['item-name']}>{ name }</span>
                         <span className={styles['item-time']}>{ time }</span>
                     </p>
-                    <p className={styles['item-message']}>{ message }</p>
+                    <p className={styles['item-message']}>{ cutOffText(message, 12) }</p>
                 </div>
             </div>
         );

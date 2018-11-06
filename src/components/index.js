@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import Nav from './nav';
 import Contacts from './contacts/index';
-import ChatFun from '../containers/chat/record';
+import ChatFun from '../containers/chat/index';
 // import ChatFun from './chat/index';
 
 import styles from './styles.scss';

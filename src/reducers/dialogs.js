@@ -95,7 +95,7 @@ const dialogs = (state = defaultValue, action) => {
             });
         case reducerType.SEARCH_CONTACTS:
            if(action.payload) {
-                 let contacts = [];
+                let contacts = [];
                 state.map(({id, name, data}) => {
                     if(name.indexOf(action.payload) !== -1) {
                         contacts.push({id, name, data});
@@ -105,6 +105,17 @@ const dialogs = (state = defaultValue, action) => {
            } else {
                 return defaultValue;
            }
+        case reducerType.SEND_MESSAGE:
+            let messages = [];
+            state.forEach(({id, name, data}) => {
+                if(id == action.payload.id) {
+                    data.push(["1", action.payload.message, action.payload.time]);
+                    messages.unshift({id, name, data})
+                } else {
+                    messages.push({id, name, data});
+                }
+            });
+            return messages;
         default: return state;
     }
 }

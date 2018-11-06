@@ -8,4 +8,6 @@ export const getDialogs = createAction(reducerType.GET_DIALOGS);
 
 export const searchContacts = createAction(reducerType.SEARCH_CONTACTS);
 
+export const sendMessage = createAction(reducerType.SEND_MESSAGE);
+
 

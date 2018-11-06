@@ -19,8 +19,13 @@ class Search extends React.Component {
         if(e.keyCode == "13") {
             e.preventDefault();
             this.props.searchContact(e.target.value);
-        }
-        
+        }    
+    }
+
+    onChange(e) {
+        this.setState({
+            context: e.target.value
+        });
     }
 
     render() {
@@ -29,7 +34,7 @@ class Search extends React.Component {
             <div className={style['search-container']}>
                 <div className={style['search-box']}>
                     <img src="../../asserts/img/search.svg" />
-                    <input type="text" name="search" placeholder="搜索" onKeyDown={this.onKeyDown}/>
+                    <input type="text" name="search" placeholder="搜索" value={context} onChange={this.onChange} onKeyDown={this.onKeyDown}/>
                 </div>
 
                 <div className={style['search-btn']}>

@@ -3,16 +3,17 @@ export function cutOffText(text, totalCharLen, extChar = '...') {
     if(!text || typeof totalCharLen !== "number")
         return '';
 
-    if(totalCharLen > text.length)
+    if(totalCharLen >= text.length)
         return text;
 
     let idx = 0;
-    for(let i = 0; i < text.length; ++i) {
-        if (text.codePointAt(i) < 27 || text.codePointAt(i) > 126) {
-            idx += 2;
-        } else {
-            ++idx;
-        }
-    }
-    return text.substring(0, idx) + extChar;
+    // for(let i = 0; i < totalCharLen; ++i) {
+    //     if (text.codePointAt(i) < 27 || text.codePointAt(i) > 126) {
+    //         idx += 2;
+    //     } else {
+    //         ++idx;
+    //     }
+    // }
+    let result = text.substring(0, totalCharLen) + extChar;
+    return result;
 }

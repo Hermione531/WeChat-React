@@ -6,22 +6,19 @@ class Chat extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            chat: {}
-        };
+        this.onChange = this.onChange.bind(this);
     }
 
-    send() {
-
+    onChange(e) {
+        let text = e.target.value;  
+        this.props.onChange(text);
     }
 
     render()  {
-        const { chats } = this.state;
-
         return(
             <div className={styles['chat-container']}>
-                <textarea></textarea>
-                <button onClick={this.send}>发送(S)</button>
+                <textarea value={this.props.value} onChange={this.onChange}></textarea>
+                <button onClick={this.props.sendMessage}>发送(S)</button>
             </div>
         );
     }
