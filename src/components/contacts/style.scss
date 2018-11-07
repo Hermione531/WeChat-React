@@ -57,6 +57,8 @@ $gray-color: #999;
 
 .contacts {
     text-align: center;
+    overflow-y: scroll;
+    height: 640px;
 }
 
 .contact-item {

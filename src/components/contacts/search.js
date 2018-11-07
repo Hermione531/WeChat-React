@@ -13,6 +13,7 @@ class Search extends React.Component {
         }
 
         this.onKeyDown = this.onKeyDown.bind(this);
+        this.onChange = this.onChange.bind(this);
     }
 
     onKeyDown(e) {
@@ -26,6 +27,10 @@ class Search extends React.Component {
         this.setState({
             context: e.target.value
         });
+
+        if(!e.target.value) {
+            this.props.searchContact(e.target.value);
+        }
     }
 
     render() {
@@ -34,7 +39,7 @@ class Search extends React.Component {
             <div className={style['search-container']}>
                 <div className={style['search-box']}>
                     <img src="../../asserts/img/search.svg" />
-                    <input type="text" name="search" placeholder="搜索" value={context} onChange={this.onChange} onKeyDown={this.onKeyDown}/>
+                    <input type="text" name="search" placeholder="搜索" onChange={this.onChange} onKeyDown={this.onKeyDown}/>
                 </div>
 
                 <div className={style['search-btn']}>

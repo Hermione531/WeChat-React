@@ -19,7 +19,7 @@ class ChatFun extends React.Component {
     }
 
     sendMessage(e) {
-        this.props.send(this.props.id, this.state.message, new Date(+new Date() + 8 * 3600 * 1000).toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, ''));
+        this.props.send(this.props.id, this.state.message, new Date());
 
         this.setState({
             message: ''
@@ -35,7 +35,9 @@ class ChatFun extends React.Component {
     render() {
         const { id, name, records } = this.props;
         const { message } = this.state;
-
+        let hidden = false;
+        if(!id)
+            hidden = true;
         return (
             <div className={styles['container']} >
                 <div className={styles['title']}>
@@ -43,7 +45,7 @@ class ChatFun extends React.Component {
                     <p>{ name }</p>
                 </div>
                 <Record records={records} />
-                <Chat value={message} onChange={this.onChange} sendMessage={this.sendMessage} />
+                <Chat value={message} hidden={hidden} onChange={this.onChange} sendMessage={this.sendMessage} />
             </div>
         );
     }

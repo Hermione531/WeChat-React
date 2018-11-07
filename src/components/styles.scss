@@ -3,7 +3,7 @@
     margin: 0;
 }
 .container {
-    width: 800px;
+    width: 850px;
     height: 700px;
     margin: 100px auto;
     /*border-radius: 5px;*/
@@ -11,4 +11,16 @@
 
     display: flex;
     flex-direction: row;
+}
+
+/* 滚动条滑道 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.1);   
+    /*-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.1);*/
 }
