@@ -9,10 +9,18 @@ class Record extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.refDom.scrollTop = this.refDom.scrollHeight;
+    }
+
+    componentDidUpdate() {
+        this.refDom.scrollTop = this.refDom.scrollHeight;
+    }
+
     render() {
         const { records } = this.props;
         return(
-            <div className={styles['record-container']}>
+            <div className={styles['record-container']} ref={ref => this.refDom = ref}>
                 {records && records.map((item, index, array) => {
                     if(item[0] === "0") {
                         return (<div className={styles['contact-container']}>

@@ -34,8 +34,8 @@ class Chat extends React.Component {
     }
 
     onKeyDown(e) {
-        // e.preventDefault();
         if(e.keyCode == 13) {
+            e.preventDefault();
             this.props.sendMessage();
         }
     }
@@ -45,7 +45,7 @@ class Chat extends React.Component {
         const { hidden } = this.props;
         return( hidden ? <div className={styles['chat-placehoder']}></div> :
             <div className={styles['chat-container']} style={{backgroundColor: isEditing ? '#fff': 'transparent'}}>
-                <textarea value={this.props.value} onChange={this.onChange} onFocus={this.onFocus} onBlur={this.onBlur} onKeyDown={this.onKeyDown}></textarea>
+                <textarea name="text" value={this.props.value} onChange={this.onChange} onFocus={this.onFocus} onBlur={this.onBlur} onKeyDown={this.onKeyDown}></textarea>
                 <button onClick={this.props.sendMessage}>发送(S)</button>
             </div>
         );

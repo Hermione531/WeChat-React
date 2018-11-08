@@ -67,6 +67,7 @@ $gray-color: #999;
     text-align: center;
     padding: 12px;
     height: 38px;
+    cursor: default;
 
     &:hover {
         background-color: #d8d8d8;
@@ -106,5 +107,13 @@ $gray-color: #999;
         color: $gray-color;
         padding-top: 2px;
         font-size: 12px;
+    }
+}
+
+.active {
+    background-color: #c4c4c4;
+
+    &:hover {
+        background-color: #c4c4c4;
     }
 }

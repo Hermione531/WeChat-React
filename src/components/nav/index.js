@@ -10,16 +10,12 @@ class Nav extends React.Component{
         super(props);
     }
 
-    // changeId(id) {
-
-    // }
-
     render() {
         return(
             <div className={styles['container']}>
                 <div className={styles['tools']}>
                     <div className={styles['self-img']}><img src={self_img}/></div>
-                    <div className={styles['chat-tool']}></div>
+                    <div className={styles['chat-tool']} ></div>
                     <div className={styles['contact-tool']}></div>
                     <div className={styles['collection-tool']}></div>
                 </div>

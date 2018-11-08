@@ -29,7 +29,7 @@ class Search extends React.Component {
         });
 
         if(!e.target.value) {
-            this.props.searchContact(e.target.value);
+            this.props.searchContact(e.target.value );
         }
     }
 

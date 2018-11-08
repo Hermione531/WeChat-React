@@ -12,9 +12,9 @@ class Item extends React.Component {
 
     render() {
         const { id, img, name, message, time } = this.props.data;
-
+        const { selected } = this.props;
         return (
-            <div className={styles['contact-item']} onClick={this.props.onClick}>
+            <div className={ selected ? `${styles['contact-item']} ${styles['active']}` : styles['contact-item']} onClick={this.props.onClick}>
                 <div className={styles['item-img']}>
                     <img src={temp_url}/>
                 </div>
