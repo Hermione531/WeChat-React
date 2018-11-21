@@ -7,22 +7,22 @@ class List extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            selected: null
-        };
+        // this.state = {
+        //     selected: null
+        // };
         this.select = this.select.bind(this);
     }
 
     select(id) {
-        this.setState({
-            selected: id
-        });
+        // this.setState({
+        //     selected: id
+        // });
         this.props.changeDialog(id);
     }
 
     render() {
-        const { selected } = this.state;
-        const { dialogs } = this.props;
+        // const { selected } = this.state;
+        const { currentDialogId, dialogs } = this.props;
 
 
         if(!dialogs) {
@@ -31,7 +31,7 @@ class List extends React.Component {
         }
 
         return <div className={style['contacts']}>
-                {dialogs.map(dialog => <Item key={dialog.id} data={dialog} onClick={() => this.select(dialog.id)} selected={selected == dialog.id ? true : false} />)}
+                {dialogs.map(dialog => <Item key={dialog.id} data={dialog} onClick={() => this.select(dialog.id)} selected={currentDialogId == dialog.id ? true : false} />)}
             </div>
 
     }

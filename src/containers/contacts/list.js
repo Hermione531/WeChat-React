@@ -35,7 +35,10 @@ const mapStateToProps = state => {
                 time
             }
         }
-    )}
+    ),
+    currentDialogId: state.get("currentDialogId")
+    }
+    
 }
 
 const mapDispatchToProps = dispatch => ({

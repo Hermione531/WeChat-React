@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import styles from './style.scss';
 
@@ -8,16 +9,42 @@ import more_img from '../../asserts/img/more.svg'
 class Nav extends React.Component{
     constructor(props) {
         super(props);
+
+        this.state = {
+            active: window.location.pathname.split("/").pop()
+        };
+
+        this.changeTag = this.changeTag.bind(this);
+    }
+
+    changeTag(tag) {
+        return () => {
+                this.setState({
+                active: tag
+            });
+        }
     }
 
     render() {
+        const { active } = this.state;
+        const icon_tag = {
+            chat: active === 'chat' ? "chat-tool-active" : "chat-tool", 
+            contact: active === 'contact' ? "contact-tool-active" : "contact-tool",
+            collection: active === 'collection' ? "collection-tool-active" : "collection-tool"
+        };
         return(
             <div className={styles['container']}>
                 <div className={styles['tools']}>
                     <div className={styles['self-img']}><img src={self_img}/></div>
-                    <div className={styles['chat-tool']} ></div>
-                    <div className={styles['contact-tool']}></div>
-                    <div className={styles['collection-tool']}></div>
+                    <div>
+                        <Link to="/chat" className={styles[icon_tag.chat]} onClick={this.changeTag('chat')}></Link>
+                    </div>
+                    <div>
+                        <Link to="/contact" className={styles[icon_tag.contact]} onClick={this.changeTag('contact')}></Link>
+                    </div>
+                    <div>
+                        <Link to="/collection" className={styles[icon_tag.collection]} onClick={this.changeTag('collection')}></Link> 
+                    </div>
                 </div>
                 <div className={styles['tool-img']}><img src='../../asserts/img/more.svg'/></div>
             </div>

@@ -8,13 +8,6 @@
     flex-direction: column;
     justify-content: space-between;
 
-    .tools {
-       /* display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        text-align: center;*/
-    }
-
     .tool-img{
         width: 100%;
         height: 27px;
@@ -26,39 +19,57 @@
     }
     
     .chat-tool {
+        display: block;
         width: 27px;
         height: 27px;
         margin: 20px auto;
         background-image: url('../../asserts/img/chat.svg');
-        background-size: 27px 27px;
+        background-size: 27px 27px;    
+    }
 
-        &:active{
-            background-image: url('../../asserts/img/chat-active.svg');
-        }
+    .chat-tool-active {
+        display: block;
+        width: 27px;
+        height: 27px;
+        margin: 20px auto;
+        background-image: url('../../asserts/img/chat-active.svg');
+        background-size: 27px 27px; 
     }
 
     .contact-tool {
+        display: block;
         width: 27px;
         height: 27px;
         margin: 20px auto;
         background-image: url('../../asserts/img/contact.svg');
-        background-size: 27px 27px;
-
-        &:active{
-            background-image: url('../../asserts/img/contact-active.svg');
-        }
+        background-size: 27px 27px;    
+    }
+    
+    .contact-tool-active {
+        display: block;
+        width: 27px;
+        height: 27px;
+        margin: 20px auto;
+        background-image: url('../../asserts/img/contact-active.svg');
+        background-size: 27px 27px; 
     }
 
     .collection-tool {
+        display: block;
         width: 27px;
         height: 27px;
         margin: 20px auto;
         background-image: url('../../asserts/img/box.svg');
         background-size: 27px 27px;
+    }
 
-        &:active{
-            background-image: url('../../asserts/img/box-active.svg');
-        }
+    .collection-tool-active {
+        display: block;
+        width: 27px;
+        height: 27px;
+        margin: 20px auto;
+        background-image: url('../../asserts/img/box-active.svg');
+        background-size: 27px 27px;
     }
     
     .self-img {
