@@ -105,7 +105,7 @@ const dialogs = (state = defaultValue, action) => {
            if(action.payload) {
                 let contacts = [];
                 state.map(({id, name, data}) => {
-                    if(name.indexOf(action.payload) !== -1) {
+                    if(name.indexOf(action.payload) !== -1) {   //name.includes(action.payload)
                         contacts.push({id, name, data});
                     }
                 });
