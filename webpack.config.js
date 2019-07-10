@@ -5,8 +5,8 @@ const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plug
 const OpenBrowerPlugin = require('open-browser-webpack-plugin');
 const BabelPluginImport = require('babel-plugin-import');
 
-const port = 8085;
-const host = `http://localhost:${port}`;
+const port = 8082;
+const host = `http://localhost:${port}/chat`;
 
 module.exports = {
     entry:  __dirname + '/src/index.js',
